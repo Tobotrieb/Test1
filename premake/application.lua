@@ -2,7 +2,7 @@ require "premake/library"
 
 applications = {}
 
-function application(name)
+function application(name, link_against)
 	group("Applications")
 	project(name)
 		filter {"configurations:Debug"}
@@ -19,7 +19,7 @@ function application(name)
 		})
 		includedirs("include")
 		
-		links(libraries)
+		links(link_against)
 	
 	table.insert(applications, name)
 end

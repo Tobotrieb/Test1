@@ -15,12 +15,6 @@ function library(name, link_against)
 		includedirs("include")
 		
 		links(link_against)
-		filter {"system:windows"}
-			links("OpenGL32")
-		
-		filter {"system:not windows"}
-			links("GL")
-		filter{}
 	
 	table.insert(libraries, name)
 end
